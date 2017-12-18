@@ -1,0 +1,78 @@
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+
+// Monochrome Gray Palette
+$gray0:                                      #FFFFFF;
+$gray1:                                      #F6F8F9;
+$gray2:                                      #D8DFE6;
+$gray3:                                      #8D9AA0;
+$gray4:                                      #54626C;
+$gray5:                                      #414F5C;
+$gray6:                                      #151B21;
+
+// Teal
+$teal1:                                      #82DBDF;
+$teal2:                                      #05B7BF;
+$teal3:                                      #00ACB4;
+
+// Purple
+$purple1:                                    #CDABFF;
+$purple2:                                    #975EEC;
+$purple3:                                    #7E3CE0;
+
+// Red
+$red:                                        #ED326E;
+
+
+// Background Color Loops
+$colors:      ($gray0, gray0),
+              ($gray1, gray1),
+              ($gray2, gray2),
+              ($gray3, gray3),
+              ($gray4, gray4),
+              ($gray5, gray5),
+              ($gray6, gray6),
+
+              ($teal1, teal1),
+              ($teal2, teal2),
+              ($teal3, teal3),
+
+              ($purple1, purple1),
+              ($purple2, purple2),
+              ($purple3, purple3),
+
+              ($red, red);
+
+
+// BG Color Helper Classes
+@each $color, $name in $colors {
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+// Text Color Helper Classes
+@each $color, $name in $colors {
+  .text-#{$name} {
+    color: $color !important;
+  }
+}
+
+// BG Gradient Helper Classes
+
+// Background Gradient
+.bg-gradient-teal{
+  background: linear-gradient($teal2 0%, $teal3 100%);
+  &.rotate{
+    background: linear-gradient(-90deg, $teal2 0%, $teal3 100%);
+  }
+  &.tilt{
+    background: linear-gradient(150deg, $teal2 0%, $teal3 100%);
+  }
+}
+
+.blockquote, blockquote {
+  border-left: none !important;
+}

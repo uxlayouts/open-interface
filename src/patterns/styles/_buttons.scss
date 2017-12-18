@@ -1,0 +1,86 @@
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+.btn, button:not(.hamburger), input[type=submit]{
+  font-family: 'lato', helvetica, arial, sans-serif;
+  background: $ctaColor;
+  color: $gray1;
+  border: 2px solid $ctaColor;
+  transition: all .25s;
+  display: inline-block;
+  font-size: .8rem;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 3rem;
+  padding: .6rem 3.0rem;
+  @media (max-width: 998px) {
+    padding: .6rem 2.25rem;
+  }
+  &.btn-square{
+    border-radius: 0;
+  }
+  &.btn-subtle{
+    background: transparent;
+    color: $ctaColor;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+    padding: .23rem 0;
+    margin: .95rem 0;
+    &:hover,
+    &:active,
+    &.active{
+      background: transparent;
+      color: $ctaColorHover;
+      border-bottom: 2px solid $ctaColorHover;
+    }
+  }
+  &:hover,
+  &:active,
+  &.active{
+    background: $ctaColorHover;
+    border: 2px solid $ctaColorHover;
+  }
+  &.btn-invert  {
+    background-color: $gray0;
+    border-color: $gray0;
+    color: $gray6;
+    &:hover,
+    &:active,
+    &.active{
+      background: $gray2;
+      color: $gray6;
+      border: 2px solid $gray2;
+    }
+  }
+  &.btn-hollow{
+    background: transparent;
+    color: $gray6;
+    border: 2px solid $gray2;
+    &:hover,
+    &:active,
+    &.active{
+      background: $ctaColorHover;
+      color: $gray1;
+      border: 2px solid $ctaColorHover;
+    }
+  }
+  &.btn-block{
+    width: 100%;
+    display: block;
+  }
+  &.btn-fixed{
+    width: 250px;
+  }
+  &:disabled,
+  &[disabled]{
+    opacity: .5;
+  }
+}

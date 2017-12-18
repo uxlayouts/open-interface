@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="29px" viewBox="0 0 31 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Tokens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sell" transform="translate(-280.000000, -26.000000)" stroke-width="2" stroke="#8D9AA0">
+            <g id="Header">
+                <g id="Search" transform="translate(281.000000, 27.000000)">
+                    <g id="zoom-split">
+                        <path d="M29,27 L23,21" id="Shape"></path>
+                        <circle id="Oval" stroke-linecap="square" cx="12.5" cy="12.5" r="12.5"></circle>
+                        <path d="M5,11 C5.73684211,8.05263158 8.05263158,5.73684211 11,5" id="Shape" stroke-linecap="square"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

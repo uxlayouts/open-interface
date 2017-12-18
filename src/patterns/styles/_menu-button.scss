@@ -1,0 +1,94 @@
+/* -----------------------------------------------------------------------------
+  HAMBURGER ICONS COMPONENT
+----------------------------------------------------------------------------- */
+
+
+// vars
+
+$button-width: 60px;                    // The width of the button area
+$button-height: 60px;                   // The height of the button area
+$bar-thickness: 2px;                    // The thickness of the button bars
+$button-pad: 12px;                      // The left/right padding between button area and bars.
+$button-bar-space: 0px;                // The spacing between button bars
+$button-transistion-duration: 0.3s;     // The transition duration
+
+$background-color1: #fff;
+$background-color2: rgba(255, 255, 255, 0.0);
+$background-color3: darken($background-color2, 20%);
+
+/* active state, i.e. menu open */
+.hamburger {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: $button-width;
+	height: $button-height;
+	font-size: 0;
+	text-indent: -9999px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: none;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	transition: background $button-transistion-duration;
+	background-color: $background-color2;
+	&:focus {
+		outline: none;
+	}
+	span {
+    display: block;
+    position: absolute;
+    top: ($button-height / 2) - ($bar-thickness / 2);
+    left: $button-pad;
+    right: $button-pad;
+    height: $bar-thickness;
+		background: rgb(255,255,255);
+		transition: all .25s;
+		transition-delay: .05s;
+    &:before, &:after {
+			will-change: auto;
+			backface-visibility: hidden;
+			position: absolute;
+			display: block;
+			left: 0;
+			width: 100%;
+			height: $bar-thickness;
+			background-color: $background-color1;
+      content: "";
+			transition: all .25s;
+			transition-delay: 0s;
+		}
+		&:before {
+			top: -$button-pad;
+			transition-property: top, transform;
+		}
+		
+		&:after {
+			bottom: -$button-pad;
+			transition-property: bottom, transform;
+		}
+  }
+  &.is-active {
+    span {
+			background: none;
+			transition: all .25s;
+			transition-delay: 0s;
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+				transition: all .25s;
+				transition-delay: 0s;
+      }
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+				transition: all .25s;
+				transition-delay: 0s;
+      }
+    }
+  }
+}

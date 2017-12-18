@@ -1,0 +1,62 @@
+// ==========================================================================
+// Header
+// ==========================================================================
+
+.header{
+	height: 80px;
+	background: $gray5;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+
+	.logo{
+		display: inline-block;
+		float: left;
+		margin: 16px 69px 0 2rem;
+	}
+	.hamburger{
+		float: right;
+		margin: 10px 2rem 0 0;
+	}
+
+	.avatar-small{
+		float: right;
+		margin: 16px 2rem 0 0;
+	}
+}
+
+
+input.search:not([type=checkbox]):not([type=radio]), textarea{
+	display: inline-block;
+	position: relative;
+	top: 10px;
+	height: 60px;
+	width: calc(100vw - 250px - 6rem);
+	min-width: calc(100vw - 250px - 6rem);
+	background: $gray4;
+	border: 1px solid $gray4;
+	border-radius: 30px;
+	padding-left: 65px;
+	color: $gray0;
+	font-size: 1rem;
+	&::placeholder{
+		color: $gray2;
+	}
+	+ label{
+		position: absolute;
+		top: 10px;
+		left: 190px;
+		text-indent: -100vw;
+		&:after{
+			z-index: 999;
+			top: 16px;
+			left: 70px;
+			position: absolute;
+			display: block;
+			width: 31px;
+			height: 29px;
+			content: "";
+			background: url("./img/search-loop.svg");
+		}
+	}
+}

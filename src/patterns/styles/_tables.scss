@@ -1,0 +1,108 @@
+// Responsive Tables
+$breakpoint-alpha: 900px; // adjust to your needs
+
+table{
+  /* Remove spacing between table cells (from Normalize.css) */
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  width: 100%;
+
+  td,th {
+    text-align: left;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible; /*to make ths where the title is really long work*/
+    padding: .8rem 1.25rem; /* cell padding */
+  }
+
+  td {
+    border-bottom: 1px solid $gray2;
+  }
+
+  /* nth-child selector for modern browsers */
+  &.striped tr:nth-child(2n-1) td {
+    background-color: #f7f8f9;
+  }
+  &.striped tr:nth-child(2n) td {
+    background-color: #FFFFFF;
+  }
+}
+
+
+// Responsive Tables
+$breakpoint-alpha: 900px; // adjust to your needs
+
+.responsive {
+  overflow: hidden;
+  min-width: 240px; // adjust to your needs
+
+  tr {
+    border-bottom: 1px solid $gray2;
+
+    &.no-mobile {
+      @media (max-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+  th {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!
+  }
+  td {
+      display: block;
+      &.no-header {
+        font-weight: bold;
+      }
+      .btn-subtle{
+        font-size: .85rem;
+      }
+      &:not(.no-header) {
+        &:before {
+          content: attr(data-th)" \00a0"; // who knew you could do this? The internet, that's who.
+          font-weight: bold;
+          display: inline-block;
+          text-align: left;
+          float: left;
+          @media (min-width: $breakpoint-alpha) {
+            display: none;
+          }
+        }
+      }
+  }
+  th, td {
+    border-bottom: 0 !important;
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+    }
+  }
+  @media (max-width: $breakpoint-alpha) {
+    td {
+      padding: .3rem 1.0rem;
+    }
+    tr{
+      display: block;
+    }
+    tbody{
+      tr{
+        td{
+          &:not(.no-header) {
+            text-align: right;
+          }
+          &:first-of-type{
+            padding-top: 1.5rem;
+          }
+          &:last-of-type{
+            padding-bottom: 1.5rem;
+          }
+        }
+      }
+    }
+    tfoot{
+      td{
+        padding: 1.5rem 1.0rem;
+      }
+    }
+  }
+
+}

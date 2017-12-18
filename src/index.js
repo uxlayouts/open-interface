@@ -1,7 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './modules/App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react" // eslint-disable-line no-unused-vars
+import ReactDOM from "react-dom"
+import { BrowserRouter as Router } from "react-router-dom"
+import { renderRoutes } from "react-router-config"
+import registerServiceWorker from "./registerServiceWorker"
+import routes from "./routes"
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const Root = () => (
+  <Router>
+    {renderRoutes(routes)}
+  </Router>
+)
+
+ReactDOM.render(<Root />, document.getElementById("root"))
+registerServiceWorker()

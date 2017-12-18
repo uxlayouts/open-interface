@@ -1,0 +1,117 @@
+
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+// Body
+html, body{
+  background: $gray1;
+  overflow-x: hidden;
+  font-family: 'lato', helvetica, arial, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.03rem;
+  color: $bodyFontColor;
+  -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+}
+
+// Headers
+// ==========================================================================
+
+h1,h2,h3,h4,h5,h6{
+  color: $titleFontColor;
+  margin: 0;
+  line-height: 1.1;
+}
+
+p{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+small,.small{
+  font-size: .7rem;
+}
+
+hr{
+  background: $gray2;
+  height: 1px;
+  border: none;
+}
+
+
+// Text Alignment
+// ==========================================================================
+
+.text-left{
+  text-align: left;
+  display: block;
+}
+.text-right{
+  text-align: right;
+  display: block;
+}
+.text-right-desktop{
+  text-align: right;
+  display: block;
+  @media (max-width: 998px) {
+    text-align: left;
+  }
+}
+.text-center{
+  text-align: center;
+  display: block;
+}
+.text-invert{
+  color: $gray1
+}
+.text-muted{
+  color: $gray3
+}
+.text-lead{
+  font-size: 1.10rem;
+  color: $gray3;
+}
+.lead{
+  font-size: 120%;
+}
+.restrict{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  @media (max-width: 998px) {
+    max-width: 90%;
+  }
+}
+
+// Links
+// ==========================================================================
+
+a,.link{
+  color: $ctaColor;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &.active{
+    color: $ctaColorHover;
+  }
+  &:focus{
+    color: $ctaColorFocus;
+  }
+}
+
+// Responsive Font Sizing
+// ==========================================================================
+
+:root { font-size: #{$minFont}px; }
+// This part is a little bit ugly, I will explain what is going on in a blog post soon.
+@media (min-width: #{$minWidth}px) and (max-width: #{$maxWidth}px){
+  :root {
+    font-size: calc( #{$minFont}px + (#{$maxFont} - #{$minFont}) * ( (100vw - #{$minWidth}px) / ( #{$maxWidth} - #{$minWidth}) ));
+  }
+}
+@media (min-width: #{$maxWidth}px){
+   :root {
+     font-size: #{$maxFont}px;
+   }
+}
